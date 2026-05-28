@@ -2,10 +2,10 @@ import streamlit as st
 
 from backend import (
     init_tasks,
-    add_task,
     get_tasks,
     mark_task_done
 )
+from component.input import task_input_component
 
 # =====================================
 # INITIALISATION
@@ -19,12 +19,8 @@ init_tasks()
 
 st.title("Ma TodoList")
 
-# Ajouter une tâche
-new_task = st.text_input("Ajouter une tâche")
-
-if st.button("Ajouter"):
-
-    add_task(new_task)
+# Ajout d'une tache
+task_input_component()
 
 # =====================================
 # AFFICHAGE DES TÂCHES
